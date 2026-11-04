@@ -1,0 +1,6 @@
+{
+  "name": "LeadHunter VN - Chrome Extension Manifest V3",
+  "description": "Bộ tiện ích mở rộng Chrome Extension (Manifest V3) chuyên quét lead số điện thoại, tích hợp CRM, song ngữ Anh-Việt và bảng điều khiển quản lý.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadHunter VN - Cài Đặt Hệ Thống</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="settings-wrapper">
+    <!-- Header -->
+    <header class="settings-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 id="i18n-settingsTitle">Cấu hình LeadHunter VN</h1>
+          <p class="subtitle">Quản lý API Token, tích hợp CRM Webhook, Affiliate ID và hành vi trích xuất</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge-v3">Manifest V3 Secure</span>
+      </div>
+    </header>
+
+    <!-- Main Content Form -->
+    <main class="settings-body">
+      <form id="optionsForm">
+        <!-- Section: API & CRM Integration -->
+        <div class="card">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+            </svg>
+            Tích Hợp API & Hệ Thống CRM
+          </h2>
+          <p class="card-desc">Cung cấp Token xác thực và địa chỉ Webhook để tự động đẩy lead quét được về hệ thống CRM, Chatbot hoặc Google Sheets.</p>
+
+          <div class="form-group">
+            <label for="apiToken" id="i18n-apiTokenLabel">API Token / License Key</label>
+            <div class="input-with-action">
+              <input type="password" id="apiToken" placeholder="Nhập API Token (ví dụ: lh_live_9a8f...)" autocomplete="off">
+              <button type="button" class="btn-toggle-view" id="btnToggleToken">Hiện</button>
+            </div>
+            <span class="input-hint">Token này sẽ được gửi kèm trong Header `Authorization: Bearer <Token>` khi gọi Webhook.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="webhookUrl" id="i18n-webhookUrlLabel">Webhook URL Endpoint</label>
+            <input type="url" id="webhookUrl" placeholder="https://api.yourcrm.com/v1/leads/webhook" required>
+            <span class="input-hint">Endpoint POST tiếp nhận dữ liệu payload JSON của lead khi bạn bấm "Gửi tới CRM".</span>
+          </div>
+
+          <div class="test-connection-row">
+            <button type="button" class="btn-test" id="btnTestConnection">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              <span id="i18n-testConnectionBtn">Kiểm tra kết nối Webhook</span>
+            </button>
+            <div id="testResult" class="test-result-box"></div>
+          </div>
+        </div>
+
+        <!-- Section: Marketing & Affiliate -->
+        <div class="card">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7.5" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            Marketing & Affiliate Tracking
+          </h2>
+          <p class="card-desc">Tự động gắn mã giới thiệu của bạn vào liên kết Zalo hoặc xuất kèm trong file dữ liệu CSV.</p>
+
+          <div class="form-group">
+            <label for="affiliateId" id="i18n-affiliateIdLabel">Affiliate ID / Mã giới thiệu</label>
+            <input type="text" id="affiliateId" placeholder="Ví dụ: REF888 hoặc PARTNER_VN">
+            <span class="input-hint">Khi bấm vào nút "Chat Zalo", tiện ích sẽ tự động gắn tham số <code>?ref=MÃ_CỦA_BẠN</code>.</span>
+          </div>
+        </div>
+
+        <!-- Section: Automation & Display Preferences -->
+        <div class="card">
+          <h2 class="card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            Tùy Chọn Quét & Giao Diện
+          </h2>
+
+          <div class="switch-row">
+            <div>
+              <span class="switch-title" id="i18n-autoScanLabel">Tự động quét khi tải trang</span>
+              <span class="switch-desc">Khi bật, tiện ích sẽ tự động quét số điện thoại ngay khi trang web tải xong và hiển thị badge số lượng.</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="autoScan" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="switch-row">
+            <div>
+              <span class="switch-title">Nút Zalo & Gọi nhanh</span>
+              <span class="switch-desc">Hiển thị các nút mở Zalo và gọi điện trực tiếp trên thanh tác vụ nổi bên cạnh số điện thoại.</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="enableZalo" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="form-group color-group">
+            <label id="i18n-highlightColorLabel">Màu sắc nổi bật số điện thoại (Highlight)</label>
+            <div class="color-options">
+              <label class="color-option">
+                <input type="radio" name="highlightColor" value="#10b981" checked>
+                <span class="color-swatch" style="background-color: #10b981;"></span>
+                <span>Xanh Emerald (Mặc định)</span>
+              </label>
+              <label class="color-option">
+                <input type="radio" name="highlightColor" value="#3b82f6">
+                <span class="color-swatch" style="background-color: #3b82f6;"></span>
+                <span>Xanh Ocean</span>
+              </label>
+              <label class="color-option">
+                <input type="radio" name="highlightColor" value="#f59e0b">
+                <span class="color-swatch" style="background-color: #f59e0b;"></span>
+                <span>Cam Amber</span>
+              </label>
+              <label class="color-option">
+                <input type="radio" name="highlightColor" value="#8b5cf6">
+                <span class="color-swatch" style="background-color: #8b5cf6;"></span>
+                <span>Tím Hoàng Gia</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Footer Save Bar -->
+        <div class="settings-actions">
+          <div class="status-msg" id="saveStatus"></div>
+          <button type="submit" class="btn-save" id="btnSave">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+              <polyline points="17 21 17 13 7 13 7 21"></polyline>
+              <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            <span id="i18n-saveBtn">Lưu cài đặt</span>
+          </button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="../config.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

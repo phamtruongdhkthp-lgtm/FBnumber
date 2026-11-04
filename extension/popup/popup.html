@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadHunter VN - Popup</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title" id="i18n-popupTitle">LeadHunter VN</h1>
+          <div class="status-indicator" id="crmStatusBadge">
+            <span class="status-dot disconnected"></span>
+            <span class="status-text" id="crmStatusText">Kiểm tra kết nối...</span>
+          </div>
+        </div>
+      </div>
+      <button class="icon-btn" id="btnOpenOptions" title="Mở trang cài đặt" aria-label="Cài đặt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Stats & Filters -->
+    <section class="stats-card">
+      <div class="stats-row">
+        <div>
+          <span class="stats-number" id="leadCount">0</span>
+          <span class="stats-label" id="i18n-leadsFound">Số điện thoại tìm thấy</span>
+        </div>
+        <button class="btn-refresh" id="btnRescan" title="Quét lại tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
+          <span id="i18n-btnRescan">Quét lại</span>
+        </button>
+      </div>
+      <div class="carrier-tags" id="carrierTags">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Action Toolbar -->
+    <section class="toolbar">
+      <button class="tool-btn" id="btnCopyAll" title="Sao chép tất cả số điện thoại">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span id="i18n-btnCopyAll">Sao chép tất cả</span>
+      </button>
+
+      <button class="tool-btn" id="btnExportCsv" title="Tải file CSV danh sách leads">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span id="i18n-btnExportCsv">Xuất CSV</span>
+      </button>
+
+      <button class="tool-btn primary" id="btnPushAllCrm" title="Đẩy toàn bộ lead lên CRM">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="16 16 12 12 8 16"></polyline>
+          <line x1="12" y1="12" x2="12" y2="21"></line>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+        </svg>
+        <span id="i18n-btnSendAllCrm">Gửi CRM</span>
+      </button>
+    </section>
+
+    <!-- Phone List -->
+    <main class="leads-list-container">
+      <div id="leadsList" class="leads-list">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+        </div>
+        <p class="empty-title" id="i18n-noPhonesFound">Không tìm thấy số điện thoại</p>
+        <p class="empty-desc">Trang này chưa có số điện thoại theo định dạng chuẩn hoặc chưa cuộn hết nội dung.</p>
+        <button class="btn-rescan-empty" id="btnRescanEmpty">Thử quét lại trang</button>
+      </div>
+    </main>
+
+    <!-- Footer Toast Feedback -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="popup-footer">
+      <span>LeadHunter v1.0.0</span>
+      <span id="pageDomain">Tab hiện tại</span>
+    </footer>
+  </div>
+
+  <script src="../config.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

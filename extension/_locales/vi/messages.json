@@ -1,0 +1,131 @@
+{
+  "appName": {
+    "message": "LeadHunter VN - Quét Số Điện Thoại & Lead CRM",
+    "description": "Tên tiện ích mở rộng"
+  },
+  "appDesc": {
+    "message": "Tự động trích xuất số điện thoại trên trang web, phân loại nhà mạng, gửi dữ liệu về CRM và hỗ trợ bán hàng đa kênh.",
+    "description": "Mô tả tiện ích mở rộng"
+  },
+  "actionTitle": {
+    "message": "LeadHunter VN - Quét Lead",
+    "description": "Tiêu đề hiển thị khi rê chuột vào biểu tượng action"
+  },
+  "popupTitle": {
+    "message": "LeadHunter - Trích Xuất Lead",
+    "description": "Tiêu đề popup"
+  },
+  "connectedStatus": {
+    "message": "Đã kết nối CRM",
+    "description": "Trạng thái CRM hợp lệ"
+  },
+  "disconnectedStatus": {
+    "message": "Chưa cấu hình CRM",
+    "description": "Trạng thái chưa cài API token"
+  },
+  "totalFound": {
+    "message": "Tìm thấy $COUNT$ số điện thoại",
+    "description": "Số lượng số điện thoại tìm thấy",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noPhonesFound": {
+    "message": "Không tìm thấy số điện thoại nào trên trang này.",
+    "description": "Thông báo khi không có số"
+  },
+  "btnRescan": {
+    "message": "Quét lại trang",
+    "description": "Nút quét lại"
+  },
+  "btnCopyAll": {
+    "message": "Sao chép tất cả",
+    "description": "Nút sao chép toàn bộ"
+  },
+  "btnExportCsv": {
+    "message": "Xuất file CSV",
+    "description": "Nút xuất CSV"
+  },
+  "btnSendAllCrm": {
+    "message": "Đẩy tất cả lên CRM",
+    "description": "Nút gửi tất cả lên CRM"
+  },
+  "btnOptions": {
+    "message": "Cài đặt",
+    "description": "Nút mở cài đặt"
+  },
+  "quickCopy": {
+    "message": "Sao chép nhanh",
+    "description": "Hành động sao chép"
+  },
+  "copied": {
+    "message": "Đã sao chép!",
+    "description": "Thông báo đã sao chép"
+  },
+  "sendToCrm": {
+    "message": "Gửi tới CRM",
+    "description": "Gửi lead vào CRM"
+  },
+  "crmSentSuccess": {
+    "message": "Đã gửi CRM thành công!",
+    "description": "Thông báo gửi CRM thành công"
+  },
+  "crmSentError": {
+    "message": "Gửi CRM thất bại. Vui lòng kiểm tra lại cấu hình.",
+    "description": "Lỗi gửi CRM"
+  },
+  "chatZalo": {
+    "message": "Chat Zalo",
+    "description": "Nút mở Zalo"
+  },
+  "callPhone": {
+    "message": "Gọi ngay",
+    "description": "Nút gọi điện"
+  },
+  "settingsTitle": {
+    "message": "Cấu hình LeadHunter VN",
+    "description": "Tiêu đề trang cài đặt"
+  },
+  "apiTokenLabel": {
+    "message": "API Token / License Key",
+    "description": "Nhãn cho API Token"
+  },
+  "apiTokenPlaceholder": {
+    "message": "Nhập mã token bảo mật từ hệ thống CRM...",
+    "description": "Placeholder cho token"
+  },
+  "webhookUrlLabel": {
+    "message": "Webhook URL Endpoint",
+    "description": "Nhãn cho Webhook endpoint"
+  },
+  "affiliateIdLabel": {
+    "message": "Affiliate ID / Mã giới thiệu",
+    "description": "Nhãn mã ref"
+  },
+  "affiliateIdPlaceholder": {
+    "message": "Ví dụ: REF9988",
+    "description": "Placeholder cho mã ref"
+  },
+  "autoScanLabel": {
+    "message": "Tự động quét trang khi vừa tải xong",
+    "description": "Cài đặt tự động quét"
+  },
+  "highlightColorLabel": {
+    "message": "Màu sắc nổi bật số điện thoại",
+    "description": "Cài đặt màu highlight"
+  },
+  "testConnectionBtn": {
+    "message": "Kiểm tra kết nối",
+    "description": "Nút kiểm tra"
+  },
+  "saveBtn": {
+    "message": "Lưu cài đặt",
+    "description": "Nút lưu cấu hình"
+  },
+  "saveSuccess": {
+    "message": "Đã lưu cài đặt thành công!",
+    "description": "Thông báo lưu thành công"
+  }
+}

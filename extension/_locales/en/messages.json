@@ -1,0 +1,131 @@
+{
+  "appName": {
+    "message": "LeadHunter VN - Phone Extractor & CRM Leads",
+    "description": "Extension name"
+  },
+  "appDesc": {
+    "message": "Automatically extracts phone numbers on web pages, identifies carriers, syncs with CRM, and accelerates multichannel sales.",
+    "description": "Extension description"
+  },
+  "actionTitle": {
+    "message": "LeadHunter VN - Scan Leads",
+    "description": "Action icon hover tooltip"
+  },
+  "popupTitle": {
+    "message": "LeadHunter - Lead Extractor",
+    "description": "Popup header title"
+  },
+  "connectedStatus": {
+    "message": "CRM Connected",
+    "description": "Valid CRM status"
+  },
+  "disconnectedStatus": {
+    "message": "CRM Not Configured",
+    "description": "Missing API token status"
+  },
+  "totalFound": {
+    "message": "Found $COUNT$ phone numbers",
+    "description": "Count of phone numbers found",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noPhonesFound": {
+    "message": "No phone numbers found on this page.",
+    "description": "Empty state notification"
+  },
+  "btnRescan": {
+    "message": "Rescan Page",
+    "description": "Rescan button"
+  },
+  "btnCopyAll": {
+    "message": "Copy All",
+    "description": "Copy all button"
+  },
+  "btnExportCsv": {
+    "message": "Export CSV",
+    "description": "Export CSV button"
+  },
+  "btnSendAllCrm": {
+    "message": "Push All to CRM",
+    "description": "Push all leads to CRM"
+  },
+  "btnOptions": {
+    "message": "Options",
+    "description": "Open settings button"
+  },
+  "quickCopy": {
+    "message": "Quick Copy",
+    "description": "Quick copy action"
+  },
+  "copied": {
+    "message": "Copied!",
+    "description": "Copied toast"
+  },
+  "sendToCrm": {
+    "message": "Send to CRM",
+    "description": "Send lead to CRM"
+  },
+  "crmSentSuccess": {
+    "message": "Sent to CRM successfully!",
+    "description": "CRM success toast"
+  },
+  "crmSentError": {
+    "message": "Failed to send to CRM. Please check configuration.",
+    "description": "CRM error message"
+  },
+  "chatZalo": {
+    "message": "Chat Zalo",
+    "description": "Open Zalo button"
+  },
+  "callPhone": {
+    "message": "Call Now",
+    "description": "Call button"
+  },
+  "settingsTitle": {
+    "message": "LeadHunter VN Configuration",
+    "description": "Options page title"
+  },
+  "apiTokenLabel": {
+    "message": "API Token / License Key",
+    "description": "API Token label"
+  },
+  "apiTokenPlaceholder": {
+    "message": "Enter your secure CRM API token...",
+    "description": "Placeholder for token"
+  },
+  "webhookUrlLabel": {
+    "message": "Webhook URL Endpoint",
+    "description": "Webhook endpoint label"
+  },
+  "affiliateIdLabel": {
+    "message": "Affiliate ID / Referral Code",
+    "description": "Affiliate ID label"
+  },
+  "affiliateIdPlaceholder": {
+    "message": "e.g., REF9988",
+    "description": "Placeholder for affiliate"
+  },
+  "autoScanLabel": {
+    "message": "Automatically scan page when loaded",
+    "description": "Auto-scan toggle"
+  },
+  "highlightColorLabel": {
+    "message": "Phone Highlight Color",
+    "description": "Highlight color setting"
+  },
+  "testConnectionBtn": {
+    "message": "Test Connection",
+    "description": "Test connection button"
+  },
+  "saveBtn": {
+    "message": "Save Settings",
+    "description": "Save button"
+  },
+  "saveSuccess": {
+    "message": "Settings saved successfully!",
+    "description": "Settings saved toast"
+  }
+}
